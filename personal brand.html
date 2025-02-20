@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>My Web Design Portfolio</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header,
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        .project {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        #social-media ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #social-media li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+        }
+
+        #contact label {
+            margin-top: 10px;
+        }
+
+        #contact input,
+        #contact textarea {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #contact button {
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Web Design Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="niche">
+        <h2>My Niche</h2>
+        <p>I specialize in creating responsive e-commerce websites with a focus on UX/UI design.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Passionate web designer focused on creating user-friendly and visually appealing websites that drive results.
+            With a keen eye for detail and a commitment to excellence, I deliver tailored solutions that meet and exceed
+            client expectations.</p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project">
+            <img src="https://magesolution.com/wp-content/uploads/2022/07/ecommerce-website-design-examples-1024x768.jpg" alt="Project 1 Screenshot">
+            <h3>Project Title 1</h3>
+            <p>Description of Project 1: A responsive e-commerce site developed for a local business.</p>
+        </div>
+        <div class="project">
+            <img src="https://cdn.prod.website-files.com/5f16d69f1760cdba99c3ce6e/66bc81c47329ec09ea04dc98_64abd19b1d846f5e0e809fd2_34.png" alt="Project 2 Screenshot">
+            <h3>Project Title 2</h3>
+            <p>Description of Project 2: A UX/UI redesign for a mobile application, focusing on user engagement.</p>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <article>
+            <h3>How to Optimize UX for E-Commerce</h3>
+            <p>A quick guide to improving user experience for online stores, covering navigation, product pages, and
+                checkout process.</p>
+            <a href="blog-post.html">Read more</a>
+        </article>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Clients Say About Me</h2>
+        <blockquote>"Antone Onyango transformed our website into a user-friendly masterpiece! His attention to detail and
+            commitment to our goals were outstanding." - Jane Smith, CEO of Blueprint Company</blockquote>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="/submit-form" method="post">
+            <label for="name">Name:</label><br />
+            <input type="text" id="name" name="name"><br />
+
+            <label for="email">Email:</label><br />
+            <input type="email" id="email" name="email"><br />
+
+            <label for="message">Message:</label><br />
+            <textarea id="message" name="message"></textarea><br />
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer id="social-media">
+        <p>Connect with me:</p>
+        <ul class="social-links">
+            <li><a href="https://twitter.com/yourhandle">Twitter</a></li>
+            <li><a href="https://linkedin.com/in/yourprofile">LinkedIn</a></li>
+            <li><a href="https://instagram.com/yourprofile">Instagram</a></li>
+        </ul>
+        <p>&copy; 2025 Antone Onyango. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
