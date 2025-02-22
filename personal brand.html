@@ -56,7 +56,7 @@
             max-width: 100%;
             height: auto;
         }
-        
+
         #social-media ul {
             list-style: none;
             padding: 0;
@@ -93,6 +93,20 @@
             border-radius: 4px;
             cursor: pointer;
         }
+               .profile-photo {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.5); 
+            background-color: rgba(255, 255, 255, 0.5); 
+        }
+
+        .about-content {
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -117,20 +131,27 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>Passionate web designer focused on creating user-friendly and visually appealing websites that drive results.
-            With a keen eye for detail and a commitment to excellence, I deliver tailored solutions that meet and exceed
-            client expectations.</p>
+        <div class="about-content">
+            <img src="http://192.168.100.94:8080/Profile.png" alt="Profile Photo" class="profile-photo">
+            <p>Passionate web designer focused on creating user-friendly and visually appealing websites that drive
+                results.
+                With a keen eye for detail and a commitment to excellence, I deliver tailored solutions that meet and
+                exceed
+                client expectations.</p>
+        </div>
     </section>
 
     <section id="projects">
         <h2>My Projects</h2>
         <div class="project">
-            <img src="https://magesolution.com/wp-content/uploads/2022/07/ecommerce-website-design-examples-1024x768.jpg" alt="Project 1 Screenshot">
+            <img src="https://magesolution.com/wp-content/uploads/2022/07/ecommerce-website-design-examples-1024x768.jpg"
+                alt="Project 1 Screenshot">
             <h3>Project Title 1</h3>
             <p>Description of Project 1: A responsive e-commerce site developed for a local business.</p>
         </div>
         <div class="project">
-            <img src="https://cdn.prod.website-files.com/5f16d69f1760cdba99c3ce6e/66bc81c47329ec09ea04dc98_64abd19b1d846f5e0e809fd2_34.png" alt="Project 2 Screenshot">
+            <img src="https://cdn.prod.website-files.com/5f16d69f1760cdba99c3ce6e/66bc81c47329ec09ea04dc98_64abd19b1d846f5e0e809fd2_34.png"
+                alt="Project 2 Screenshot">
             <h3>Project Title 2</h3>
             <p>Description of Project 2: A UX/UI redesign for a mobile application, focusing on user engagement.</p>
         </div>
@@ -148,7 +169,8 @@
 
     <section id="testimonials">
         <h2>What Clients Say About Me</h2>
-        <blockquote>"Antone Onyango transformed our website into a user-friendly masterpiece! His attention to detail and
+        <blockquote>"Antone Onyango transformed our website into a user-friendly masterpiece! His attention to detail
+            and
             commitment to our goals were outstanding." - Jane Smith, CEO of Blueprint Company</blockquote>
     </section>
 
