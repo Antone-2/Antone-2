@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<style>
+    body {
+    background-image: url(https://cdn-bnofo.nitrocdn.com/YCOqbulOWPTbigaUOflqfvBCmkFuxfWf/assets/images/optimized/rev-e16415c/www.wepc.com/wp-content/uploads/2025/01/Best-RTX-5090-laptop-768x506.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.hero-header {
+    background: #081b29;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    font-size: 1.5rem;
+    margin-right: 5px;
+    color: #007ced;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.navlinks {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navlinks li {
+    display: inline;
+}
+
+.navlinks a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.navlinks a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.about,
+.portfolio,
+.contact {
+    padding: 50px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #081b29;
+}
+
+.about p {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #007ced;
+}
+
+.project p {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.project .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007ced;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition:  0.3s;
+}
+
+.project .btn:hover {
+    background: #005bb5;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0 5px;
+    transition: 0.3s;
+    pointer-events: none;
+    font-size: 1rem;
+    color: #999;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label,
+.input-box textarea:focus~label,
+.input-box textarea:valid~label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.8rem;
+    color: #007ced;
+}
+.social-media {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-media a {
+    color: default;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #005bb5;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #007ced;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:  0.3s;
+}
+
+.btn:hover {
+    background: #005bb5;
+}
+
+footer {
+    background: #081b29;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+</style>
+<body>
+    <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fk-solid fa-k"></i>
+                    <div class="logo-text">Kesa Onyango</div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Resume</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+    <main>
+        <section class="about">
+            <div class="wrapper">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    
+                </div>
+                <p>Hello! I'm Kesa Onyango, a passionate web developer with experience in creating dynamic and
+                    responsive websites. I love coding and am always eager to learn new technologies.</p>
+            </div>
+        </section>
+        <section class="portfolio">
+            <div class="wrapper">
+                <h2>My Portfolio</h2>
+                <div class="projects">
+                    <div class="project">
+                        <h3>Project 1</h3>
+                        <p>This project involves creating a dynamic and responsive website using HTML, CSS,
+                            and JavaScript.</p>
+                        <p><strong>Technologies used:</strong> HTML, CSS, JavaScript</p>
+                        <a href="#" target="_blank" class="btn">View Project</a>
+                    </div>
+                    <div class="project">
+                        <h3>Project 2</h3>
+                        <p> This project is a web application built with React and Node.js, featuring a RESTful
+                            API and a MongoDB database.</p>
+                        <p><strong>Technologies used:</strong> React, Node.js, MongoDB</p>
+                        <a href="#" target="_blank" class="btn">View Project</a>
+                    </div>
+                    <div class="project">
+                        <h3>Project 3</h3>
+                        <p>This project is a mobile app built with Flutter, featuring a user-friendly
+                            interface and real-time data updates.</p>
+                        <p><strong>Technologies used:</strong> Flutter, Firebase</p>
+                        <a href="#" target="_blank" class="btn">View Project</a>
+                </div>
+
+            </div>
+        </section>
+        <section class="contact">
+            <div class="wrapper">
+                <h2>Contact Me</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <input type="text" required>
+                        <label>Name</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <textarea required></textarea>
+                        <label>Message</label>
+                    </div>
+                    <button type="submit" class="btn">Send</button>
+                </form>
+                <div class="social-media">
+                    <a href="https://facebook.com" target="_antoneonyango"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_antonebruele103@gmail.com"><i class="fab fa-twitter"></i></a>
+                    <a href="https://whatsapp.com" target="_0726238126"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://linkedin.com" target="_antonebruele103@gmail.com"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://instagram.com" target="_antonebruele103@gmail.com"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com" target="_Antone-2"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <p>&copy; 2025 Kesa Onyango. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
