@@ -267,7 +267,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    transition: all 0.3s ease-in-out;
+                    transition: transform 0.3s ease-in-out;
                 }
 
                 .home-img img {
@@ -275,9 +275,12 @@
                     height: 100%;
                     z-index: -1;
                     object-fit: cover;
+                    transition:transform 0.3s ease-in-out;
                     -webkit-animation: floatImage 4s ease-in-out infinite;
                     animation: floatImage 4s ease-in-out infinite;
                 }
+                .home-img:hover img {
+                    transform:scale(1.2);
 
                 @keyframes floatImage {
                     0% {
