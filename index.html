@@ -15,14 +15,16 @@
     <header class="header">
         <a href="#" class="logo">AB27<span>DEV.</span></a>
         <i class="bx bx-menu" id="menu-icon"></i>
-        <nav class="navbar">
-            <a href="#" class="logo">Portfolio</a>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+<nav class="navbar">
+  <div class="nav-brand">Antone</div>
+  <button class="hamburger" id="hamburger">☰</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
     </header>
     <section class="home" id="home">
         <div class="home-content">
@@ -198,6 +200,40 @@
                     min-height: 100vh;
                     padding: 7rem 9% 2rem;
                 }
+                /* CSS: Flex-wrap cards on small screens */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}img, .project-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+                .contact-form input, 
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box; /* Prevents overflow */
+  padding: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 0 1rem; /* Adds side padding */
+  }
+}
+
+.project-card {
+  min-width: 300px;
+  flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    flex: 1 1 100%; /* Full width on mobile */
+  }
+}
 
                 .header {
                     position: fixed;
@@ -1028,7 +1064,11 @@
             <script>
                 const menuIcon = document.querySelector('#menu-icon');
                 const navbar = document.querySelector('.navbar');
-
+          // JS: Toggle menu on click
+       document.getElementById("hamburger").addEventListener("click", () => {
+           const navLinks = document.getElementById("nav-links");
+           navLinks.classList.toggle("active");
+          });
                 menuIcon.addEventListener('click', () => {
                     menuIcon.classList.toggle('bx-x');
                     navbar.classList.toggle('active');
