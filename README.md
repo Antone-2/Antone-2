@@ -64,9 +64,9 @@ Tech Stack: Express.js, JWT, PostgreSQL, Swagger
  📈 GitHub Stats
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=antoneonyango&show_icons=true&theme=radical&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=antoneonyango&layout=compact&langs_count=8&theme=radical"/>
-  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=antoneonyango&theme=radical" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Antone-2&show_icons=true&theme=radical&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Antone-2&layout=compact&langs_count=8&theme=radical"/>
+  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=Antone-2&theme=radical" />
 </div>
 
 🏆 Achievements
