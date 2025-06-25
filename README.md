@@ -64,9 +64,9 @@ Tech Stack: Express.js, JWT, PostgreSQL, Swagger
  📈 GitHub Stats
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=radical&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yourusername&layout=compact&langs_count=8&theme=radical"/>
-  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=yourusername&theme=radical" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=antoneonyango&show_icons=true&theme=radical&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=antoneonyango&layout=compact&langs_count=8&theme=radical"/>
+  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=antoneonyango&theme=radical" />
 </div>
 
 🏆 Achievements
@@ -102,5 +102,5 @@ Feel free to reach out through any of the channels above!
 ![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=AB27.DEV.AB27.DEV)
 
 <p align="center"> 
-  <img src="https://komarev.com/ghpvc/?username=AB27.DEV&label=Profile%20views&color=0e75b6&style=flat" alt="yourusername" /> 
+  <img src="https://komarev.com/ghpvc/?username=AB27.DEV&label=Profile%20views&color=0e75b6&style=flat" alt="antoneonyango" /> 
 </p>
