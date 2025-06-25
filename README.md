@@ -35,7 +35,7 @@ DevOps & Tools
 � Featured Projects
 
 1. Project Name - E-commerce Platform
-[![Live Demo](https://img.shields.io/badge/Live_Demo-4CAF50?style=for-the-badge)](https://demo.example.com)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-4CAF50?style=for-the-badge)](https://github.com/Antone-2/Antone_2)
 [![Repo](https://img.shields.io/badge/Repo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Antone-2/Antone_2)
 
 A full-featured e-commerce platform with cart functionality, user authentication, and payment processing.
