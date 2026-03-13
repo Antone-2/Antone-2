@@ -42,7 +42,6 @@ A full-featured e-commerce platform with cart functionality, user authentication
 
 Tech Stack: React, Node.js, MongoDB, Stripe API, Redux
 
----
 
 2. Project Name - Task Management App
 [![Live Demo](https://img.shields.io/badge/Live_Demo-4CAF50?style=for-the-badge)](https://demo.example.com)
@@ -52,7 +51,6 @@ A collaborative task management application with real-time updates and team feat
 
 Tech Stack: Next.js, TypeScript, Firebase, Tailwind CSS
 
----
 
 3. Project Name - API Service
 [![Repo](https://img.shields.io/badge/Repo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourrepo)
