@@ -1,0 +1,30 @@
+import type { Project } from '../types'
+
+export const PROJECTS: Project[] = [
+  {
+    id: 'mabawa-creations',
+    name: 'Mabawa Creations',
+    type: 'Personal',
+    status: 'Live',
+    problem: '',
+    role: '',
+    scope: '',
+    stack: [],
+    liveUrl: 'https://mabawacreations.com',
+    repoUrl: null,
+    featured: true,
+    keyFeatures: [],
+    architecture: '',
+    database: '',
+    apiDesign: '',
+    auth: '',
+    fileStorage: '',
+    security: '',
+    testing: '',
+    deployment: '',
+    challenges: '',
+    learned: '',
+    future: '',
+    screenshots: [],
+  },
+]
