@@ -20,7 +20,7 @@ export function Hero() {
             View featured work
             <ArrowRight className="svg-icon-sm" aria-hidden="true" />
           </a>
-          <a href="/resume.pdf" download className="btn-outline">
+          <a href="/resume.pdf" download="Kesa-Onyango-CV.pdf" className="btn-outline">
             <Download className="svg-icon-sm" aria-hidden="true" />
             Download CV
           </a>

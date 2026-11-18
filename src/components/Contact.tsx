@@ -33,7 +33,7 @@ export function Contact() {
       <div className="contact-form">
         <p>Interested in a full-stack engineer who owns products from interface to API and deployment?</p>
         <div className="project-action-row">
-          <a href="/resume.pdf" download className="btn">Download résumé</a>
+          <a href="/resume.pdf" download="Kesa-Onyango-CV.pdf" className="btn">Download résumé</a>
           <a href="https://github.com/Antone-2" target="_blank" rel="noopener noreferrer" className="btn-outline">Explore GitHub</a>
         </div>
       </div>

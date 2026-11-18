@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CV of Kesa Onyango, full-stack engineer in Nairobi, Kenya.">
+    <title>Kesa Onyango | Full-Stack Engineer</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17243b;
+        --muted: #53647b;
+        --accent: #20c9b2;
+        --line: #dce5ed;
+        --paper: #fff;
+        --canvas: #edf2f6;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        padding: 28px 16px;
+        background: var(--canvas);
+        color: var(--ink);
+        font: 10pt/1.48 "Segoe UI", Arial, sans-serif;
+      }
+
+      a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 2px; }
+
+      .resume {
+        width: min(100%, 210mm);
+        min-height: 297mm;
+        margin: 0 auto;
+        padding: 13mm 14mm 11mm;
+        background: var(--paper);
+        box-shadow: 0 16px 48px rgb(23 36 59 / 12%);
+      }
+
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin: -13mm -14mm 7mm;
+        padding: 10mm 14mm 8mm;
+        background: var(--ink);
+        color: white;
+      }
+
+      .hero-copy { min-width: 0; }
+
+      .eyebrow {
+        margin: 0 0 3px;
+        color: var(--accent);
+        font-size: 8pt;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 28pt;
+        letter-spacing: -0.8px;
+        line-height: 1.08;
+      }
+
+      .role {
+        margin: 5px 0 0;
+        color: #d4dfeb;
+        font-size: 12pt;
+      }
+
+      .portrait {
+        width: 23mm;
+        height: 23mm;
+        flex: 0 0 auto;
+        border: 2px solid rgb(32 201 178 / 75%);
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 14px;
+        margin: 0 0 6mm;
+        color: var(--muted);
+        font-size: 8.5pt;
+      }
+
+      .contact a { overflow-wrap: anywhere; }
+
+      section { margin-top: 5mm; }
+
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin: 0 0 2mm;
+        color: var(--ink);
+        font-size: 11pt;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+      }
+
+      h2::after {
+        height: 1px;
+        flex: 1;
+        background: var(--line);
+        content: "";
+      }
+
+      p { margin: 0; }
+
+      .summary { color: #35465c; }
+
+      .skill-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px 18px;
+      }
+
+      .skill-row { color: var(--muted); }
+      .skill-row strong { color: var(--ink); }
+
+      .role-heading,
+      .project-heading,
+      .education-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 10.5pt;
+      }
+
+      .dates,
+      .subtitle {
+        color: var(--muted);
+        font-size: 8.5pt;
+      }
+
+      ul {
+        display: grid;
+        gap: 2px;
+        margin: 2mm 0 0;
+        padding-left: 17px;
+      }
+
+      li { padding-left: 1px; }
+      li::marker { color: #12a995; }
+
+      .project + .project { margin-top: 3mm; }
+      .project-links { margin-top: 1mm; color: var(--muted); font-size: 8.5pt; }
+      .confidential { color: var(--muted); font-size: 8pt; }
+      .education-note { margin-top: 2mm; color: var(--muted); font-size: 8.5pt; }
+
+      .availability {
+        margin-top: 5mm;
+        padding: 2.5mm 3mm;
+        border-left: 3px solid var(--accent);
+        background: #effbf9;
+        color: #244b4b;
+        font-size: 9pt;
+      }
+
+      @media (max-width: 600px) {
+        body { padding: 0; background: var(--paper); }
+        .resume { min-height: 100vh; padding: 24px 20px; box-shadow: none; }
+        .hero { margin: -24px -20px 20px; padding: 25px 20px 22px; }
+        h1 { font-size: 24pt; }
+        .portrait { width: 19mm; height: 19mm; }
+        .skill-grid { grid-template-columns: 1fr; }
+        .role-heading, .project-heading, .education-heading { align-items: flex-start; flex-direction: column; gap: 0; }
+      }
+
+      @page { size: A4; margin: 0; }
+
+      @media print {
+        body { padding: 0; background: white; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+        .resume { width: 210mm; min-height: 297mm; margin: 0; box-shadow: none; }
+        a { text-decoration: none; }
+        section, .project, .availability { break-inside: avoid; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="resume">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Software engineering · Nairobi, Kenya</p>
+          <h1>Kesa Onyango</h1>
+          <p class="role">Full-Stack Engineer</p>
+        </div>
+        <img class="portrait" src="profile.jpg" alt="Portrait of Kesa Onyango">
+      </header>
+
+      <nav class="contact" aria-label="Contact and profile links">
+        <a href="mailto:onyangoantone1@gmail.com">onyangoantone1@gmail.com</a>
+        <a href="https://www.linkedin.com/in/kesa-onyango">LinkedIn</a>
+        <a href="https://github.com/Antone-2">GitHub · Antone-2</a>
+        <a href="https://mabawacreations.com">Live project · Mabawa Creations</a>
+      </nav>
+
+      <section>
+        <h2>Profile</h2>
+        <p class="summary">
+          Full-stack engineer building practical web products across React interfaces, Node.js APIs, databases, integrations, and deployment. Experienced in developing marketplace and operational workflows end to end, with an emphasis on responsive user experiences, dependable data handling, and maintainable code.
+        </p>
+      </section>
+
+      <section>
+        <h2>Technical skills</h2>
+        <div class="skill-grid">
+          <p class="skill-row"><strong>Frontend</strong> · JavaScript, React, HTML, CSS, Tailwind CSS, responsive design</p>
+          <p class="skill-row"><strong>Backend</strong> · Node.js, Express, REST APIs, JWT, role-based access control</p>
+          <p class="skill-row"><strong>Data</strong> · PostgreSQL, MongoDB, Mongoose, schema design, indexing</p>
+          <p class="skill-row"><strong>Cloud &amp; delivery</strong> · AWS, Cloudflare R2, Vercel, Render, Railway, Git</p>
+          <p class="skill-row"><strong>Engineering</strong> · Validation, error handling, testing, documentation, debugging</p>
+          <p class="skill-row"><strong>Integrations</strong> · File upload pipelines, object storage, malware scanning</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <div class="role-heading">
+          <h3>Independent Full-Stack Developer</h3>
+          <span class="dates">2023 – Present</span>
+        </div>
+        <p class="subtitle">Freelance and personal projects</p>
+        <ul>
+          <li>Build full-stack web applications and marketplace features from product workflows through frontend, APIs, and deployment.</li>
+          <li>Develop database models, authentication, role-aware experiences, input validation, and clear API error handling.</li>
+          <li>Integrate external services and file-storage workflows; deploy and maintain applications across cloud platforms.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Selected project</h2>
+        <article class="project">
+          <div class="project-heading">
+            <h3>Mabawa Creations <span class="subtitle">· Sole developer · Live B2B marketplace</span></h3>
+            <span class="dates">PPE &amp; industrial procurement</span>
+          </div>
+          <ul>
+            <li>Designed and developed the product end to end across its frontend, backend, integrations, deployment, and maintenance.</li>
+            <li>Built buyer, supplier, and operations workflows including product catalog, RFQs, cart and checkout, inventory, and order tracking.</li>
+          </ul>
+          <p class="project-links">
+            <a href="https://mabawacreations.com">mabawacreations.com</a>
+            · <a href="https://www.mabawacreations.com/developer">Developer platform</a>
+          </p>
+        </article>
+        <p class="confidential">Mabawa Creations and Safety project source repositories are private under client agreements.</p>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="education-heading">
+          <h3>Diploma in Software Engineering</h3>
+          <span class="dates">Graduated 2021</span>
+        </div>
+        <p class="subtitle">Braeburn Garden Estate</p>
+        <p class="education-note">Ongoing self-directed learning in full-stack web development with React and Node.js.</p>
+      </section>
+
+      <p class="availability"><strong>Availability:</strong> Open to remote full-time and contract software engineering roles.</p>
+    </main>
+  </body>
+</html>
