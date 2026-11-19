@@ -7,7 +7,8 @@ export function useTheme() {
   }
 
   const applyTheme = (theme: 'light' | 'dark') => {
-    document.documentElement.classList.toggle('dark', theme === 'dark')
+    document.documentElement.classList.remove('light', 'dark')
+    document.documentElement.classList.add(theme)
     localStorage.setItem('theme', theme)
   }
 

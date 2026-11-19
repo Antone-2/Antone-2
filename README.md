@@ -31,3 +31,7 @@ npm run build
 ```
 
 Contact: [onyangoantone1@gmail.com](mailto:onyangoantone1@gmail.com) · [LinkedIn](https://www.linkedin.com/in/kesa-onyango) · [GitHub](https://github.com/Antone-2)
+
+## Verification
+
+Run the production build with `npm run build`. The generated `dist` directory can be previewed with `npm run preview`.

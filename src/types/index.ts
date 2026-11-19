@@ -25,9 +25,15 @@ export interface Project {
   screenshots: string[]
 }
 
+export interface SkillWithLevel {
+  name: string
+  level: 'Expert' | 'Advanced' | 'Intermediate'
+  projects: string[]
+}
+
 export interface SkillCategory {
   category: string
-  skills: string[]
+  skills: SkillWithLevel[]
   note?: string
 }
 
