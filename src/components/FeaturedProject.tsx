@@ -42,7 +42,7 @@ export function FeaturedProject() {
   ]
 
   return (
-    <section id="featured" className="section section--compact" aria-labelledby="featured-heading" ref={ref}>
+    <section id="featured" className="section section--compact featured-page" aria-labelledby="featured-heading" ref={ref}>
       <div className="container">
         <header className={`section-header ${isIntersecting ? 'animate-reveal' : 'opacity-0'}`} style={{ textAlign: 'center', maxWidth: '720px', marginInline: 'auto', marginBottom: 'var(--space-12)' }}>
           <h2 id="featured-heading" className="display-2" style={{ marginBottom: 'var(--space-4)' }}>
@@ -56,8 +56,8 @@ export function FeaturedProject() {
           gap: 'var(--space-10)',
           alignItems: 'start',
         }}>
-          {/* Visual Preview */}
-          <div className={`featured-visual ${isIntersecting ? 'animate-slide-up' : 'opacity-0'}`} style={{ position: 'relative' }}>
+          {/* Visual Preview - first on mobile, left on desktop */}
+          <div className={`featured-visual ${isIntersecting ? 'animate-slide-up' : 'opacity-0'}`} style={{ position: 'relative', order: -1 }}>
             <div className="browser-mock card card--elevated" style={{
               overflow: 'hidden',
               background: 'var(--color-bg-elevated)',
@@ -149,7 +149,7 @@ export function FeaturedProject() {
             </div>
           </div>
 
-          {/* Details */}
+          {/* Details - second on mobile, right on desktop */}
           <div className={`featured-details ${isIntersecting ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '100ms', display: 'flex', flexDirection: 'column' }}>
             <div className="project-header" style={{ marginBottom: 'var(--space-6)' }}>
               <h3 className="display-3" style={{ marginBottom: 'var(--space-4)' }}>Mabawa Creations</h3>
@@ -218,14 +218,14 @@ export function FeaturedProject() {
                 href="https://mabawacreations.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn--primary"
+                className="btn btn--primary featured-action-btn"
                 aria-label="Visit live Mabawa Creations platform"
               >
                 Live Platform
                 <ExternalLink className="icon" aria-hidden="true" />
               </a>
-              <Link to="/case-study/mabawa-creations" className="btn btn--secondary">
-                Read Engineering Case Study
+              <Link to="/case-study/mabawa-creations" className="btn btn--secondary featured-action-btn">
+                Read Case Study
                 <ArrowRight className="icon" aria-hidden="true" />
               </Link>
             </div>
@@ -288,7 +288,7 @@ export function FeaturedProject() {
                   href="https://www.mabawacreations.com/developer"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn--secondary"
+                  className="btn btn--primary featured-docs-btn"
                 >
                   Explore Developer Docs
                   <ExternalLink className="icon" aria-hidden="true" />

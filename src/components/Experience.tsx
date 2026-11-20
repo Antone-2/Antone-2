@@ -55,7 +55,11 @@ export function Experience() {
                   <Briefcase className="icon-lg" />
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-1" style={{ flexWrap: 'wrap' }}>
+                  <div className="flex items-center gap-3 mb-1" style={{
+                    flexWrap: 'wrap',
+                    columnGap: 'var(--space-3)',
+                    rowGap: 'var(--space-2)',
+                  }}>
                     <h3 className="heading-3" style={{ margin: 0 }}>{item.role}</h3>
                     <span className="badge badge--primary">{item.type}</span>
                   </div>

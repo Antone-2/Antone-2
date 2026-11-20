@@ -82,7 +82,11 @@ export function TechnicalSkills() {
                       e.currentTarget.style.background = 'var(--color-bg)';
                     }}
                   >
-                    <div className="flex items-center gap-2 flex-wrap" style={{ width: '100%' }}>
+                    <div className="flex items-center gap-2 flex-wrap" style={{
+                      width: '100%',
+                      columnGap: 'var(--space-2)',
+                      rowGap: 'var(--space-2)',
+                    }}>
                       <span style={{ fontWeight: 500, color: 'var(--color-fg)', fontSize: 'var(--text-sm)' }}>{skill.name}</span>
                       <span className="badge badge--outline" style={{ fontSize: 'var(--text-xs)', textTransform: 'capitalize' }}>{skill.level.toLowerCase()}</span>
                     </div>

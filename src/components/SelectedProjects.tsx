@@ -22,7 +22,7 @@ export function SelectedProjects() {
   const { ref, isIntersecting } = useIntersectionObserver({ triggerOnce: true })
 
   return (
-    <section id="projects" className="section section--compact" aria-labelledby="projects-heading" ref={ref}>
+    <section id="projects" className="section section--compact projects-page" aria-labelledby="projects-heading" ref={ref}>
       <div className="container">
         <header className={`section-header ${isIntersecting ? 'animate-reveal' : 'opacity-0'}`} style={{ textAlign: 'center', maxWidth: '720px', marginInline: 'auto', marginBottom: 'var(--space-12)' }}>
           <p className="overline">Beyond the Featured Work</p>
@@ -40,51 +40,39 @@ export function SelectedProjects() {
           gridTemplateColumns: '1fr',
           gap: 'var(--space-5)',
         }} role="list">
-          {evidence.map((item, index) => (
+          {evidence.map((item) => (
             <article
               key={item.title}
-              className="card card--interactive"
-              style={{
-                padding: 'var(--space-6)',
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%',
-                animationDelay: `${index * 120}ms`,
-              }}
+              className="card card--interactive project-card"
               role="listitem"
             >
-              <div className="project-header" style={{ marginBottom: 'var(--space-5)' }}>
-                <div className="flex items-center gap-2 mb-3" style={{ flexWrap: 'wrap' }}>
-                  <item.icon className="icon" style={{ color: 'var(--color-accent)' }} aria-hidden="true" />
+              <div className="project-card-copy">
+                <div className="project-card-tags">
                   <span className="badge badge--primary">{item.type}</span>
-                  <span className="badge badge--success">{item.status}</span>
                 </div>
-                <h3 className="heading-2" style={{ margin: 0 }}>{item.title}</h3>
+                <h3 className="heading-2 project-card-title">{item.title}</h3>
+                <p className="body project-card-description">{item.description}</p>
               </div>
 
-              <p className="body" style={{ color: 'var(--color-fg-muted)', flex: 1, marginBottom: 'var(--space-6)' }}>{item.description}</p>
-
-              <div className="project-links" style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: 'var(--space-3)',
-                paddingTop: 'var(--space-5)',
-                borderTop: '1px solid var(--color-border)',
-                marginTop: 'auto',
-              }}>
+              <div className="project-card-action">
+                <div className="project-card-status">
+                  <item.icon className="icon" aria-hidden="true" />
+                  <span>{item.status}</span>
+                </div>
                 {item.url.startsWith('http') ? (
                   <a
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn--primary"
+                    className="btn btn--primary project-card-cta"
                   >
-                    {item.label}
+                    <span className="project-card-cta-label">{item.label}</span>
                     <ExternalLink className="icon" aria-hidden="true" />
                   </a>
                 ) : (
-                  <Link to={item.url} className="btn btn--primary">
-                    {item.label}
+                  <Link to={item.url} className="btn btn--primary project-card-cta">
+                    <span className="project-card-cta-label">{item.label}</span>
+                    <ExternalLink className="icon" aria-hidden="true" />
                   </Link>
                 )}
                 {item.repoUrl && (

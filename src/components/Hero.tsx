@@ -115,29 +115,26 @@ export function Hero() {
                 href="https://www.linkedin.com/in/kesa-onyango"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn--ghost btn--sm touch-target"
+                className="btn btn--ghost btn-icon touch-target"
                 aria-label="LinkedIn profile"
               >
                 <LinkedInIcon className="icon" aria-hidden="true" />
-                <span className="hidden sm:inline">LinkedIn</span>
               </a>
               <a
                 href="https://github.com/Antone-2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn--ghost btn--sm touch-target"
+                className="btn btn--ghost btn-icon touch-target"
                 aria-label="GitHub profile"
               >
                 <GitHubIcon className="icon" aria-hidden="true" />
-                <span className="hidden sm:inline">GitHub</span>
               </a>
               <a
                 href="mailto:onyangoantone1@gmail.com"
-                className="btn btn--ghost btn--sm touch-target"
+                className="btn btn--ghost btn-icon touch-target"
                 aria-label="Email me"
               >
                 <Mail className="icon" aria-hidden="true" />
-                <span className="hidden sm:inline">Email</span>
               </a>
             </div>
           </div>
@@ -145,7 +142,7 @@ export function Hero() {
           {/* Personal visual keeps the hero focused on the engineer */}
           <div className={`hero-visual ${isIntersecting ? 'animate-slide-up' : 'opacity-0'}`} style={{
             animationDelay: '200ms',
-            order: 0,
+            order: -1, /* Visual first on mobile */
           }}>
             <div className="hero-image-wrapper" style={{
               position: 'relative',

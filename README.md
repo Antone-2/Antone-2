@@ -24,6 +24,15 @@ npm install
 npm run dev
 ```
 
+### Contact form backend
+
+The contact form posts to `/api/contact`, which sends messages through Resend. Copy
+`.env.example` to `.env.local`, add a Resend API key, and set `CONTACT_FROM_EMAIL`
+to an address on a domain verified with Resend. `CONTACT_TO_EMAIL` is the inbox
+that receives submissions. The Vite dev server serves the same API locally; Vercel
+deployments use `api/contact.ts`. Set the same environment variables in the Vercel
+project settings before enabling live submissions.
+
 Create a production build with:
 
 ```sh

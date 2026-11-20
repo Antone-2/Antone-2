@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/:path((?!api/contact).*)", "destination": "/index.html" }
   ],
   "headers": [
     {

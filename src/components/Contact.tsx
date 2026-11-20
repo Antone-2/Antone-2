@@ -6,13 +6,44 @@ import { useState } from 'react'
 export function Contact() {
   const { ref, isIntersecting } = useIntersectionObserver({ triggerOnce: true })
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [formError, setFormError] = useState('')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const form = e.currentTarget
+    const formData = new FormData(form)
     setFormStatus('submitting')
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setFormStatus('success')
-    setTimeout(() => setFormStatus('idle'), 5000)
+    setFormError('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          subject: formData.get('subject'),
+          message: formData.get('message'),
+          website: formData.get('website'),
+        }),
+      })
+      const result: unknown = await response.json()
+
+      if (!response.ok) {
+        const message = isRecord(result) && typeof result.error === 'string'
+          ? result.error
+          : 'Unable to send your message right now. Please try again or email me directly.'
+        throw new Error(message)
+      }
+
+      form.reset()
+      setFormStatus('success')
+    } catch (cause) {
+      setFormError(cause instanceof Error
+        ? cause.message
+        : 'Unable to send your message right now. Please try again or email me directly.')
+      setFormStatus('error')
+    }
   }
 
   const contactItems = [
@@ -195,7 +226,11 @@ export function Contact() {
                 Prefer email? <a href="mailto:onyangoantone1@gmail.com" className="link">onyangoantone1@gmail.com</a>
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="sr-only" aria-hidden="true">
+                  <label htmlFor="website">Leave this field empty</label>
+                  <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+                </div>
                 <div>
                   <label htmlFor="name" className="label">Name <span style={{ color: 'var(--color-error)' }} aria-hidden="true">*</span></label>
                   <input
@@ -203,6 +238,8 @@ export function Contact() {
                     id="name"
                     name="name"
                     required
+                    minLength={2}
+                    maxLength={100}
                     autoComplete="name"
                     className="input touch-target"
                     placeholder="Your name"
@@ -218,6 +255,7 @@ export function Contact() {
                     id="email"
                     name="email"
                     required
+                    maxLength={254}
                     autoComplete="email"
                     className="input touch-target"
                     placeholder="Email address"
@@ -252,6 +290,8 @@ export function Contact() {
                     name="message"
                     required
                     rows={5}
+                    minLength={10}
+                    maxLength={5000}
                     className="input touch-target"
                     placeholder="Tell me about the role, project, or question..."
                     aria-describedby="message-hint"
@@ -292,7 +332,7 @@ export function Contact() {
 
                 {formStatus === 'error' && (
                   <p className="body-sm" style={{ textAlign: 'center', color: 'var(--color-error)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)' }} role="alert">
-                    Something went wrong. Please try emailing me directly.
+                    {formError}
                   </p>
                 )}
 
@@ -306,4 +346,8 @@ export function Contact() {
       </div>
     </section>
   )
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value)
 }
