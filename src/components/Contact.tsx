@@ -12,6 +12,11 @@ export function Contact() {
     e.preventDefault()
     const form = e.currentTarget
     const formData = new FormData(form)
+    const name = formData.get('name') as string
+    const email = formData.get('email') as string
+    const subject = formData.get('subject') as string
+    const message = formData.get('message') as string
+
     setFormStatus('submitting')
     setFormError('')
 
@@ -19,31 +24,39 @@ export function Contact() {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.get('name'),
-          email: formData.get('email'),
-          subject: formData.get('subject'),
-          message: formData.get('message'),
-          website: formData.get('website'),
-        }),
+        body: JSON.stringify({ name, email, subject, message }),
       })
-      const result: unknown = await response.json()
+
+      const result = await response.json()
 
       if (!response.ok) {
-        const message = isRecord(result) && typeof result.error === 'string'
-          ? result.error
-          : 'Unable to send your message right now. Please try again or email me directly.'
-        throw new Error(message)
+        throw new Error(result.error || 'Unable to send your message right now. Please try again or email me directly.')
       }
 
       form.reset()
       setFormStatus('success')
     } catch (cause) {
-      setFormError(cause instanceof Error
-        ? cause.message
-        : 'Unable to send your message right now. Please try again or email me directly.')
+      setFormError(cause instanceof Error ? cause.message : 'Unable to send your message right now. Please try again or email me directly.')
       setFormStatus('error')
     }
+  }
+
+  const handleMailtoFallback = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget.closest('form') as HTMLFormElement
+    if (!form) return
+    const formData = new FormData(form)
+    const name = formData.get('name') as string
+    const email = formData.get('email') as string
+    const subject = formData.get('subject') as string
+    const message = formData.get('message') as string
+
+    const mailtoLink = `mailto:onyangoantone1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`
+    )}`
+
+    window.location.href = mailtoLink
+    form.reset()
   }
 
   const contactItems = [
@@ -227,10 +240,6 @@ export function Contact() {
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="sr-only" aria-hidden="true">
-                  <label htmlFor="website">Leave this field empty</label>
-                  <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
-                </div>
                 <div>
                   <label htmlFor="name" className="label">Name <span style={{ color: 'var(--color-error)' }} aria-hidden="true">*</span></label>
                   <input
@@ -331,9 +340,20 @@ export function Contact() {
                 )}
 
                 {formStatus === 'error' && (
-                  <p className="body-sm" style={{ textAlign: 'center', color: 'var(--color-error)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)' }} role="alert">
-                    {formError}
-                  </p>
+                  <div style={{ textAlign: 'center', marginTop: 'var(--space-3)' }}>
+                    <p className="body-sm" style={{ color: 'var(--color-error)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)' }} role="alert">
+                      {formError}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={handleMailtoFallback}
+                      className="btn btn--secondary btn--sm touch-target"
+                      style={{ marginTop: 'var(--space-3)' }}
+                    >
+                      <Mail className="icon" aria-hidden="true" />
+                      Send via Email Instead
+                    </button>
+                  </div>
                 )}
 
                 <p className="caption" style={{ textAlign: 'center' }}>
@@ -346,8 +366,4 @@ export function Contact() {
       </div>
     </section>
   )
-}
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === 'object' && value !== null && !Array.isArray(value)
 }

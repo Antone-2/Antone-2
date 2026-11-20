@@ -91,7 +91,7 @@ export function FeaturedProject() {
                   border: '1px solid var(--color-border)',
                   borderRadius: 'var(--radius-lg)',
                 }} aria-label="Mock navigation">
-                  <img src="/mabawa-logo.png" alt="Mabawa Creations logo" className="mock-logo" style={{ height: '36px', width: 'auto' }} />
+                  <img src="/mabawa-logo.png" alt="Mabawa Creations logo" loading="lazy" decoding="async" className="mock-logo" style={{ height: '36px', width: 'auto' }} />
                   <div className="mock-nav-links" style={{ display: 'flex', gap: 'var(--space-5)', fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--color-fg-muted)', letterSpacing: '0.02em' }} aria-hidden="true">
                     <span>Shop</span>
                     <span>Categories</span>
@@ -110,6 +110,7 @@ export function FeaturedProject() {
                     src="/mabawa-hero.webp"
                     alt="Industrial procurement platform interface showing product catalog"
                     loading="lazy"
+                    decoding="async"
                     className="mock-hero-image"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35 }}
                   />
@@ -117,13 +118,14 @@ export function FeaturedProject() {
                     position: 'absolute',
                     inset: 0,
                     display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    alignItems: 'flex-end',
+                    justifyContent: 'flex-start',
                     padding: 'var(--space-8)',
                     background: 'linear-gradient(90deg, rgba(10,10,10,0.98) 0%, rgba(10,10,10,0.8) 40%, transparent 85%)',
                   }}>
-                    <strong style={{ color: 'white', fontSize: 'clamp(var(--text-xl), 3vw, var(--text-3xl))', fontWeight: 700, textAlign: 'center', maxWidth: '85%', lineHeight: 1.15, textShadow: '0 4px 24px rgba(0,0,0,0.3)' }}>
-                      Industrial procurement made simpler.
+                    <strong className="mock-hero-title">
+                      <span>Industrial procurement</span>
+                      <span>made <em>simpler.</em></span>
                     </strong>
                   </div>
                 </div>

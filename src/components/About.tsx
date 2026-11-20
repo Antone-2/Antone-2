@@ -14,7 +14,7 @@ export function About() {
 
   const stats = [
     { value: '1', label: 'Live Marketplace' },
-    { value: '2+', label: 'Years Shipping' },
+    { value: '3+', label: 'Years Shipping' },
     { value: '10+', label: 'Projects Delivered' },
     { value: '100%', label: 'Remote-Ready' },
   ]
@@ -34,7 +34,10 @@ export function About() {
               <img
                 src="/profile.jpg"
                 alt="Kesa Onyango"
+                width={1120}
+                height={1120}
                 loading="lazy"
+                decoding="async"
                 className="about-image"
                 style={{
                   width: '100%',

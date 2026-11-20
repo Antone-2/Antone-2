@@ -72,8 +72,10 @@ export function Hero() {
               justifyContent: 'center',
               marginBottom: 'var(--space-8)',
             }}>
-              <span className="badge badge--primary">Open to remote full-time roles</span>
-              <span className="badge badge--primary">Available for contract work</span>
+              <div style={{ display: 'flex', flexWrap: 'nowrap', gap: 'var(--space-2)' }}>
+                <span className="badge badge--primary">Open to remote full-time roles</span>
+                <span className="badge badge--primary">Available for contract work</span>
+              </div>
               <span className="badge badge--secondary">Based in Nairobi (EAT, UTC+3)</span>
             </div>
 
@@ -152,6 +154,8 @@ export function Hero() {
               <img
                 src="/profile.jpg"
                 alt="Portrait of Kesa Onyango"
+                width={1120}
+                height={1120}
                 loading="eager"
                 fetchPriority="high"
                 className="hero-image"
@@ -200,7 +204,7 @@ export function Hero() {
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                }}>2+</span>
+                }}>3+</span>
                 <span className="stat-label caption" style={{ fontWeight: 500 }}>Years Shipping</span>
               </div>
               <div className="stat" style={{
