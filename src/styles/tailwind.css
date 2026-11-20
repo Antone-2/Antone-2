@@ -920,20 +920,14 @@ select {
   }
 
   .hero-title-line {
-    white-space: nowrap;
+    display: block !important;
+    margin-bottom: var(--space-3) !important;
+    white-space: normal !important;
+    text-wrap: balance !important;
   }
 
-  .hero-title-break {
-    display: block;
-  }
-
-  @media (min-width: 768px) {
-    .hero-title-break {
-      display: none;
-    }
-    .hero-title-line {
-      white-space: nowrap;
-    }
+  .hero-title-line:last-child {
+    margin-bottom: 0 !important;
   }
 
   .hero-content .body-lg {
@@ -943,8 +937,16 @@ select {
   }
 
   .hero-badges {
-    justify-content: flex-start !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
     margin-bottom: var(--space-6) !important;
+    width: 100% !important;
+  }
+
+  .hero-badges > div {
+    justify-content: center !important;
+    width: 100% !important;
   }
 
   .hero-badges .badge {
@@ -952,29 +954,40 @@ select {
   }
 
   .cta-buttons {
-    align-items: center !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: var(--space-2) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--space-3) !important;
     margin-bottom: var(--space-6) !important;
+    width: 100% !important;
+    max-width: 400px !important;
+    margin-inline: auto !important;
+  }
+
+  .cta-buttons > div {
+    display: flex !important;
+    gap: var(--space-2) !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
   }
 
   .cta-buttons .btn {
-    min-width: 0;
+    min-width: 0 !important;
     max-width: none !important;
     width: auto !important;
-    flex: 1 1 0;
-    padding-inline: var(--space-3);
-    font-size: var(--text-xs);
+    flex: 1 1 140px !important;
+    padding-inline: var(--space-3) !important;
+    font-size: var(--text-xs) !important;
   }
 
   .cta-buttons .btn--ghost {
-    flex: 0 0 44px;
-    padding-inline: var(--space-2);
+    flex: 0 0 44px !important;
+    padding-inline: var(--space-2) !important;
   }
 
   .hero-social {
-    justify-content: flex-start !important;
+    justify-content: center !important;
+    padding-top: var(--space-4) !important;
+    border-top: 1px solid var(--color-border) !important;
   }
 
   .hero-image-wrapper {
@@ -991,6 +1004,10 @@ select {
     gap: var(--space-2) !important;
     margin-top: var(--space-5) !important;
     padding-top: var(--space-4) !important;
+  }
+
+  .hero-stats .stat {
+    padding: var(--space-2) !important;
   }
 
   .stat-label {
@@ -1915,5 +1932,43 @@ select {
   .featured-page .project-actions .btn .icon {
     width: 1rem;
     height: 1rem;
+  }
+}
+
+.hero-primary-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+@media (max-width: 767px) {
+  .hero-availability-badges {
+    flex-wrap: nowrap !important;
+    gap: var(--space-1) !important;
+  }
+
+  .hero-availability-badges .badge {
+    padding-inline: clamp(2px, 1vw, 3px) !important;
+    font-size: clamp(0.5rem, 2.8vw, 0.5625rem) !important;
+  }
+
+  .hero-primary-actions {
+    width: 100%;
+    flex-wrap: nowrap !important;
+  }
+
+  .cta-buttons .hero-primary-actions .btn {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    min-height: 44px !important;
+    padding: var(--space-2) var(--space-3) !important;
+    font-size: 0.75rem !important;
+  }
+
+  .cta-buttons .hero-resume-link {
+    align-self: center;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-height: 44px !important;
+    padding: var(--space-1) var(--space-3) !important;
   }
 }

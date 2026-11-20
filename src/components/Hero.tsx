@@ -10,7 +10,7 @@ export function Hero() {
     <section id="home" className="section section--hero" aria-labelledby="hero-heading" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
       <a href="#main-content" className="skip-link">Skip to main content</a>
 
-      {/* Background atmosphere */}
+      {/* Background atmosphere - enhanced for mobile depth */}
       <div
         className="animate-fade-in"
         style={{
@@ -19,10 +19,28 @@ export function Hero() {
           background: `
             radial-gradient(ellipse at 85% -10%, var(--color-accent-muted) 0%, transparent 55%),
             radial-gradient(ellipse at -10% 110%, rgba(212, 168, 67, 0.06) 0%, transparent 60%),
+            radial-gradient(circle at 50% 100%, rgba(212, 168, 67, 0.04) 0%, transparent 40%),
             var(--color-bg)
           `,
           pointerEvents: 'none',
           zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Subtle grid pattern overlay for texture */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: `
+            linear-gradient(rgba(212, 168, 67, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(212, 168, 67, 0.02) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px',
+          pointerEvents: 'none',
+          zIndex: 0,
+          opacity: 0.5,
         }}
         aria-hidden="true"
       />
@@ -41,18 +59,38 @@ export function Hero() {
             textAlign: 'center',
             paddingTop: 'var(--space-8)',
           }}>
-            <p className="overline" style={{ marginBottom: 'var(--space-6)' }}>Full-Stack Engineer · Nairobi, Kenya</p>
+            {/* Eyebrow/overline with accent line */}
+            <p className="overline" style={{ 
+              marginBottom: 'var(--space-5)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              Full-Stack Engineer · Nairobi, Kenya
+            </p>
 
+            {/* Hero title - improved mobile line break with visual separation */}
             <h1 id="hero-heading" className="display-1" style={{
               marginBottom: 'var(--space-6)',
               maxWidth: '900px',
               marginInline: 'auto',
             }}>
-              <span className="hero-title-line">I Build Digital Products</span>
-              <br className="hero-title-break" />
-              <span className="text-gradient hero-title-line">That Solve Real Problems</span>
+              <span className="hero-title-line" style={{ 
+                display: 'block', 
+                marginBottom: 'var(--space-3)',
+                textWrap: 'balance',
+              }}>
+                I Build Digital Products
+              </span>
+              <span className="text-gradient hero-title-line" style={{ 
+                display: 'block',
+                textWrap: 'balance',
+              }}>
+                That Solve Real Problems
+              </span>
             </h1>
 
+            {/* Body text - optimized line length and spacing for mobile */}
             <p className="body-lg" style={{
               maxWidth: '680px',
               margin: '0 auto var(--space-8)',
@@ -64,54 +102,65 @@ export function Hero() {
               complex workflows, and clean architecture that lasts.
             </p>
 
-            {/* Status badges */}
+            {/* Status badges - improved mobile layout: stacked on small, inline on larger */}
             <div className="hero-badges" style={{
               display: 'flex',
-              flexWrap: 'wrap',
+              flexDirection: 'column',
               gap: 'var(--space-2)',
-              justifyContent: 'center',
+              alignItems: 'center',
               marginBottom: 'var(--space-8)',
             }}>
-              <div style={{ display: 'flex', flexWrap: 'nowrap', gap: 'var(--space-2)' }}>
+              <div className="hero-availability-badges" style={{ 
+                display: 'flex', 
+                gap: 'var(--space-2)', 
+                justifyContent: 'center',
+                width: '100%',
+              }}>
                 <span className="badge badge--primary">Open to remote full-time roles</span>
                 <span className="badge badge--primary">Available for contract work</span>
               </div>
               <span className="badge badge--secondary">Based in Nairobi (EAT, UTC+3)</span>
             </div>
 
-            {/* Primary CTAs - stacked on mobile, inline on desktop */}
+            {/* Primary actions stay paired; résumé remains a separate secondary action. */}
             <div className="cta-buttons" style={{
               display: 'flex',
               flexDirection: 'column',
               gap: 'var(--space-3)',
-              alignItems: 'center',
+              alignItems: 'stretch',
               marginBottom: 'var(--space-10)',
+              width: '100%',
+              maxWidth: '400px',
+              marginInline: 'auto',
             }}>
-              <Link to="/featured" className="btn btn--primary btn--lg" style={{ width: '100%', maxWidth: '320px' }}>
-                View Work
-                <ArrowRight className="icon" aria-hidden="true" />
-              </Link>
-              <Link to="/contact" className="btn btn--secondary btn--lg" style={{ width: '100%', maxWidth: '320px' }}>
-                Contact
-              </Link>
+              <div className="hero-primary-actions">
+                <Link to="/featured" className="btn btn--primary btn--sm">
+                  View Work
+                  <ArrowRight className="icon" aria-hidden="true" />
+                </Link>
+                <Link to="/contact" className="btn btn--secondary btn--sm">
+                  Contact
+                </Link>
+              </div>
               <a
                 href="/resume.pdf"
                 download="Kesa-Onyango-Resume.pdf"
-                className="btn btn--ghost btn--lg"
+                className="btn btn--ghost btn--sm hero-resume-link"
                 aria-label="Download résumé as PDF"
-                style={{ width: '100%', maxWidth: '320px' }}
               >
                 <Download className="icon" aria-hidden="true" />
-                <span className="hidden sm:inline">Download Résumé</span>
+                <span className="hidden sm:inline">Résumé</span>
               </a>
             </div>
 
-            {/* Social proof - inline */}
+            {/* Social proof - elevated with subtle card treatment */}
             <div className="hero-social" style={{
               display: 'flex',
               flexWrap: 'wrap',
               gap: 'var(--space-2)',
               justifyContent: 'center',
+              paddingTop: 'var(--space-4)',
+              borderTop: '1px solid var(--color-border)',
             }}>
               <a
                 href="https://www.linkedin.com/in/kesa-onyango"
@@ -119,6 +168,10 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="btn btn--ghost btn-icon touch-target"
                 aria-label="LinkedIn profile"
+                style={{ 
+                  backgroundColor: 'var(--color-bg-elevated)',
+                  border: '1px solid var(--color-border)',
+                }}
               >
                 <LinkedInIcon className="icon" aria-hidden="true" />
               </a>
@@ -128,6 +181,10 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="btn btn--ghost btn-icon touch-target"
                 aria-label="GitHub profile"
+                style={{ 
+                  backgroundColor: 'var(--color-bg-elevated)',
+                  border: '1px solid var(--color-border)',
+                }}
               >
                 <GitHubIcon className="icon" aria-hidden="true" />
               </a>
@@ -135,6 +192,10 @@ export function Hero() {
                 href="mailto:onyangoantone1@gmail.com"
                 className="btn btn--ghost btn-icon touch-target"
                 aria-label="Email me"
+                style={{ 
+                  backgroundColor: 'var(--color-bg-elevated)',
+                  border: '1px solid var(--color-border)',
+                }}
               >
                 <Mail className="icon" aria-hidden="true" />
               </a>
@@ -151,6 +212,17 @@ export function Hero() {
               maxWidth: '320px',
               marginInline: 'auto',
             }}>
+              {/* Subtle glow ring behind image */}
+              <div style={{
+                position: 'absolute',
+                inset: '-16px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle at center, var(--color-accent-muted) 0%, transparent 70%)',
+                zIndex: -2,
+                filter: 'blur(24px)',
+                opacity: 0.6,
+              }} aria-hidden="true" />
+              
               <img
                 src="/profile.jpg"
                 alt="Portrait of Kesa Onyango"
@@ -179,7 +251,7 @@ export function Hero() {
               }} aria-hidden="true" />
             </div>
 
-            {/* Quick proof stats - responsive grid */}
+            {/* Quick proof stats - responsive grid with better mobile treatment */}
             <div className="hero-stats" style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
@@ -194,7 +266,10 @@ export function Hero() {
                 alignItems: 'center',
                 gap: 'var(--space-1)',
                 textAlign: 'center',
-                padding: 'var(--space-2)',
+                padding: 'var(--space-3) var(--space-2)',
+                backgroundColor: 'var(--color-bg-elevated)',
+                border: '1px solid var(--color-border)',
+                borderRadius: 'var(--radius-lg)',
               }}>
                 <span className="stat-value" style={{
                   fontSize: 'clamp(var(--text-xl), 5vw, var(--text-3xl))',
@@ -213,7 +288,10 @@ export function Hero() {
                 alignItems: 'center',
                 gap: 'var(--space-1)',
                 textAlign: 'center',
-                padding: 'var(--space-2)',
+                padding: 'var(--space-3) var(--space-2)',
+                backgroundColor: 'var(--color-bg-elevated)',
+                border: '1px solid var(--color-border)',
+                borderRadius: 'var(--radius-lg)',
               }}>
                 <span className="stat-value" style={{
                   fontSize: 'clamp(var(--text-xl), 5vw, var(--text-3xl))',
@@ -232,7 +310,10 @@ export function Hero() {
                 alignItems: 'center',
                 gap: 'var(--space-1)',
                 textAlign: 'center',
-                padding: 'var(--space-2)',
+                padding: 'var(--space-3) var(--space-2)',
+                backgroundColor: 'var(--color-bg-elevated)',
+                border: '1px solid var(--color-border)',
+                borderRadius: 'var(--radius-lg)',
               }}>
                 <span className="stat-value" style={{
                   fontSize: 'clamp(var(--text-xl), 5vw, var(--text-3xl))',
